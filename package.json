@@ -1,0 +1,21 @@
+{
+  "name": "team-builder",
+  "version": "1.0.0",
+  "description": "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "inquirer": "^8.1.2",
+    "jest": "^27.1.0",
+    "util": "^0.12.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
