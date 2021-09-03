@@ -85,4 +85,4 @@ const exampleHTML = (CardArr) =>
 </body>
 </html>`
 
-Module.exports = exampleHTML; 
+module.exports = exampleHTML; 

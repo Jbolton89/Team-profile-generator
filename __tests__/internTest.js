@@ -13,7 +13,7 @@ describe('Intern', () => {
     });
 
     it('getRole() will return "Intern"', () => { 
-        const eomployee = new Intern("3","Biggie","biggie@gmail.com", "USYD");
-        expect(eomployee.getRole()).toBe("Intern");
+        const employee = new Intern("3","Biggie","biggie@gmail.com", "USYD");
+        expect(employee.getRole()).toBe("Intern");
     });
 })

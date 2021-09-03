@@ -80,10 +80,10 @@ function newEmployee(prompt) {
              }
          ])
          .then((results) => {
-             if (data.addEmployee === "Yes") { 
+             if (results.addEmployee === "Yes") { 
                  newEmployee(prompt);
              } else { 
-                 let finalPage = render.exampleHTML(employee);
+                 let finalPage = exampleHTML(employee);
                  fs.writeFile("index.html", finalPage, (err) => { 
                      if (err) return (err); 
                  });
