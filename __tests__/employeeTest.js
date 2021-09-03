@@ -2,7 +2,7 @@ const Employee = require("../lib/employee.js");
 
 describe('Employee', () => {
     it("Will instantiate the instance of Employee", () => {
-        const employee = new Employee('1','Jason', 'jason@gmail.com', 'Manager');
+        const employee = new Employee('Jason', '1', 'jason@gmail.com', 'Manager');
         expect(employee.id).toBe('1');
         expect(employee.name).toBe('Jason'); 
         expect(employee.email).toBe('jason@gmail.com'); 
