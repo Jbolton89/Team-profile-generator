@@ -7,6 +7,7 @@ const Employee = require('./lib/employee.js');
 const Manager = require('./lib/manager.js');
 const Engineer = require('./lib/engineer.js');
 const intern = require('./lib/intern.js');
+const Intern = require('./lib/intern.js');
 
 let employee = [];
 
@@ -44,7 +45,11 @@ let prompt = [
         name:'officeNo',
         message: ({ name }) => `Please enter the office number of ${(name)}`,
         when: ({ role }) => { 
-            (role === 'Manager' ? true : false );  
+           if (role === 'Manager') {
+               return true;
+           } else { 
+               return false;
+           };  
         }
     }, 
     {
@@ -52,7 +57,11 @@ let prompt = [
         name: 'github',
         message: ({ name }) => `Please enter GitHub username for ${(name)}:`,
         when: ({ role }) => {
-            (role === 'Engineer' ? true : false );
+            if (role === 'Engineer') {
+                return true;
+            } else { 
+                return false;
+            };  ;
         }
     },
     {
@@ -60,7 +69,11 @@ let prompt = [
         name: 'school',
         message: ({ name }) => `What is the school of ${(name)}?`,
         when: ({ role }) => {
-            (role === 'Intern' ? true : false); 
+            if (role === 'Intern') {
+                return true;
+            } else { 
+                return false;
+            };  
         }
     },
     
@@ -74,9 +87,10 @@ function newEmployee(prompt) {
      .then(() => { 
          inquirer.prompt([ 
              {
-                 type:'confirm',
+                 type:'list',
                  name: 'addEmployee', 
                  message: "would you like to add further employees?",
+                 choices: ['No', 'Yes'],
              }
          ])
          .then((results) => {
@@ -92,8 +106,9 @@ function newEmployee(prompt) {
 
          }
          )}
-        // Error catch? 
-     )}
+         
+     ).catch((err) => console.log(err));
+    }
 
 function employeeType(results) { 
 

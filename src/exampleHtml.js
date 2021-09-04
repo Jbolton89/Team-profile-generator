@@ -1,7 +1,8 @@
 cardArr = []; 
 
-generateCard = (EmployeeArr) => {
-    for (let i=0; i<EmployeeArr.length; i++) { 
+generateCard = (employeeArr) => {
+    console.log(employeeArr);
+    for (var i=0; i<employeeArr.length; i++) { 
         const id = employeeArr[i].getId(); 
         const name =employeeArr[i].getName(); 
         const email =employeeArr[i].getEmail(); 
@@ -13,7 +14,7 @@ generateCard = (EmployeeArr) => {
             const officeNo = employeeArr[i].getOffice(); 
             cardArr.push(managerCard (id, name, email, role, officeNo))
         } else { 
-            const school = EmployeeArr[i].getSchool();
+            const school = employeeArr[i].getSchool();
             cardArr.push(internCard (id, name, role, school ));
         }
         console.log(cardArr);
@@ -26,7 +27,7 @@ generateCard = (EmployeeArr) => {
  const managerCard = (id, name, email, role, officeNo) =>
     `<div class="card" id="manager" style="width:500px">
         <div class="card-header bg-primary">
-             <h4 class="card-title">${name}</h4>
+             <h2 class="card-title">${name}</h2>
             <p class="card-text">${role}</p>
         </div>
     <div class="card-body bg-light text-center">
@@ -40,7 +41,7 @@ generateCard = (EmployeeArr) => {
 const engineerCard = (id, name, email, role, github) =>
 `<div class="card" id="manager" style="width:500px">
   <div class="card-header bg-primary">
-      <h4 class="card-title">${name}</h4>
+      <h2 class="card-title">${name}</h4>
       <p class="card-text">${role}</p>
   </div>
   <div class="card-body bg-light text-center">
@@ -54,7 +55,7 @@ const engineerCard = (id, name, email, role, github) =>
 const internCard = (id, name, email, role, school) =>
 `<div class="card" id="manager" style="width:500px">
   <div class="card-header bg-primary">
-      <h4 class="card-title">${name}</h4>
+      <h2 class="card-title">${name}</h4>
       <p class="card-text">${role}</p>
   </div>
   <div class="card-body bg-light text-center">
@@ -81,7 +82,14 @@ const exampleHTML = (CardArr) =>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <nav class='navbar bg-warning' id='navbar'>
+        <span class="navbar-brand text-center" id="navbar-text">Team Profile</span>
+    </nav> 
+    <div class="container">
+        <div class="card-deck">
+        ${generateCard(cardArr)}
+        </div>
+    </div>
 </body>
 </html>`
 
