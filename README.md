@@ -6,6 +6,7 @@
  
 An application that allows the user to view and interact with their employee store. There is also a clickable link to employee emails so you making communication a breeze. Additionally, you can add new employees and adjust employee information. 
 
+Video to application can be found here - https://drive.google.com/file/d/1vlHtixAdZzibQkNg02X5ivohz3c6JiD5/view 
 
  # Table of Contents
  
