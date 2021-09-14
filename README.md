@@ -28,10 +28,13 @@ An application that allows the user to view and interact with their employee sto
 
  
  
- ![application demo](./Capture1.PNG)
+ ![application](./lib/images/tests.PNG)
  
  
- ![Tests](./Capture2.PNG)
+ ![command](./lib/images/command.PNG)
+
+
+ ![webpage](./lib/images/webpage.PNG)
  
 
 
