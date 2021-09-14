@@ -1,12 +1,10 @@
 const fs = require('fs'); 
 const inquirer = require('inquirer');
-const jest = require('jest'); 
-const util = require('util'); 
+ 
 const exampleHTML = require('./src/exampleHtml.js');
 const Employee = require('./lib/employee.js'); 
 const Manager = require('./lib/manager.js');
 const Engineer = require('./lib/engineer.js');
-const intern = require('./lib/intern.js');
 const Intern = require('./lib/intern.js');
 
 let employee = [];
@@ -34,7 +32,7 @@ let prompt = [
         name: "role",
         message: ({ name }) => `Please enter the role for ${(name)}`,
         choices: [
-            "Employee", 
+            // "Employee", 
             "Manager", 
             "Engineer", 
             "Intern"
@@ -111,7 +109,7 @@ function newEmployee(prompt) {
     }
 
 function employeeType(results) { 
-
+console.log(results);
 if (results.role === "Employee") {
     employee.push(new Employee(results.name, results.id, results.email));
   } else if (results.role === "Manager") {
@@ -122,5 +120,6 @@ if (results.role === "Employee") {
     employee.push(new Intern(results.id, results.name, results.email, results.school));
   }
 }
+
 
 newEmployee(prompt); 
